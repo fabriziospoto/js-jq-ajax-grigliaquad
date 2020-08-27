@@ -8,5 +8,26 @@ $( document ).ready(function() {
     for (var i = 0; i < 35; i++) {
         $('.container').append('<div class="square"></div>');
     }
+    //Funzione per richiamare AJAX al click
+    $(".square").on("click", function(){
+        var testo = $(this);
+        $.ajax(
+            {
+            'url': "https://flynn.boolean.careers/exercises/api/random/int",
+            'method': "GET",
+            'success': function (risposta) {
+                testo.text(risposta.response);
+                if (risposta.response <= 5) {
+                    testo.addClass('yellow');
+                } else {
+                    testo.addClass('green');
+                }
+            },
+            'error': function () {
+                alert("E' avvenuto un errore. ");
+            }
+        }
+    );
+    })
 
 });
