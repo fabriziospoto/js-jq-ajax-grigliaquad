@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid lightgrey;
+    float: left;
+}
